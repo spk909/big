@@ -1,0 +1,56 @@
+<div ng-include="'views/nav.html'"></div>
+
+<div class="container" style="margin-top: 5%">
+  <div class="row" >
+  <div class="col-sm">
+    <h3><a ui-sref="classe">Classes</a></h3>
+    <a  ui-sref="inscription_eleve">inscrire un élève</a></br>
+    <a href="modifier_eleve.html">modifier un élève</a> </br>
+    <a href="delete_eleve.html">supprimer un élève</a> 
+</div>
+
+<div class="col-sm">
+    <h3><a ui-sref="professeur">Cours</a></h3>
+    <a  ui-sref="inscription_Eleve">inscrire un prof</a></br>
+    <a href="modifier_eleve.html">modifier un prof</a> </br>
+    <a href="delete_eleve.html">supprimer un prof</a> 
+</div>
+    
+
+<div class="col-sm">
+    <h3><a ui-sref="absence">absence</a></h3>
+    <a  ui-sref="inscription_Eleve">inscrire un élève</a></br>
+    <a href="modifier_eleve.html">modifier un élève</a> </br>
+    <a href="delete_eleve.html">supprimer un élève</a> 
+</div>
+      </div>
+   
+  <!-- deuxime ligne -->
+
+<div class="row" style="margin-top: 5%">
+<div class="col-sm" >
+    
+    <h3><a   ui-sref="eleve" ui-sref-active="active">Eleves</a></h3>
+    <a  ui-sref="inscription_Eleve"  ui-sref-active="active" >inscrire un élève</a></br>
+    <a href="modifier_eleve.html">modifier un élève</a> </br>
+    <a href="delete_eleve.html">supprimer un élève</a> 
+</div>
+
+<div class="col-sm">
+    <h3><a ui-sref="professeur">Cours</a></h3>
+    <a  ui-sref="inscription_Eleve">inscrire un prof</a></br>
+    <a href="modifier_eleve.html">modifier un prof</a> </br>
+    <a href="delete_eleve.html">supprimer un prof</a> 
+</div>
+
+<div class="col-sm">
+    <h3><a ui-sref="eleve">absence</a></h3>
+    <a  ui-sref="inscription_Eleve">inscrire un élève</a></br>
+    <a href="modifier_eleve.html">modifier un élève</a> </br>
+    <a href="delete_eleve.html">supprimer un élève</a> 
+</div>
+      </div>
+  <ui-view></ui-view>
+</div>
+
+

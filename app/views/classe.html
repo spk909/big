@@ -1,0 +1,13 @@
+<div ng-include="'views/nav.html'"></div>
+<div class="jumbotron">
+    <h1>liste des classes</h1>
+    <table>
+        
+    
+    <tr ng-repeat="classe in classes">
+           <td > <a ui-sref="classeEleve">{{classe.libelle}}</a></td>
+            
+        </tr>
+        </table>
+      </div>
+   <div class="jumbotron">

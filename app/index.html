@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" >
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/docs/4.0/examples/navbar-fixed/navbar-top-fixed.css" >
+    <!--<link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">-->
+    <!-- endbuild -->
+  </head>
+
+  <body layout="row" ng-app="beta2App" ng-cloak>
+
+
+  <div ui-view ></div>
+
+    <!--AngularJs -->
+    <script src="bower_components/angular/angular.js"></script>
+    <!-- endAngularJs -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="/bower_components/bootstrap/assets/js/vendor/popper.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- UI router -->
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- angular material -->
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+	  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+	  <script src="/bower_components/angular-messages/angular-messages.js"></script>
+	  <script src="/bower_components/angular-material/angular-material.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+         <!-- controller -->
+        <script src="scripts/controllers/connexion.js"></script>
+        <script src="scripts/controllers/adminMain.js"></script>
+        <script src="scripts/controllers/inscription_eleve.js"></script>
+        <script src="scripts/controllers/classe.js"></script>
+        <script src="scripts/controllers/absence.js"></script>
+      
+         
+         <!-- service -->
+         <script src="scripts/services/classeService.js"></script>
+         <script src="scripts/services/inscriptionService.js"></script>
+         
+         
+       
+         <!-- component -->
+         <script src="scripts/component/classe.js"></script>
+         <script src="scripts/component/eleve.js"></script>
+         <script src="scripts/component/absence.js"></script>
+         <script src="scripts/component/eleve_absent.js"></script>
+         
+        <!-- endbuild -->
+</body>
+</html>

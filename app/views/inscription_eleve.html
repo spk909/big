@@ -1,0 +1,89 @@
+<div ng-include="'views/nav.html'"></div>
+<div >
+    <h1>
+        inscription d'un élève
+    </h1>
+
+    
+    <h2>Ajouter un utilisateur</h2>
+
+    <form ng-submit="submitUser()" novalidate >
+        <table>
+            <tr>
+                <td>nom</td>
+                <td><input type="text" ng-model="form.nom" size="60" /></td>
+            </tr>
+            <tr>
+                <td>prenom</td>
+                <td><input type="text" ng-model="form.prenom" size="60" /></td>
+            </tr>
+            <tr>
+                <td>date_de_naissance</td>
+                <td><input type="date" ng-model="form.date_de_naissance" size="60" /></td>
+            </tr>
+            <tr>
+                <td>adresse</td>
+                <td><input type="text" ng-model="form.adresse" size="60" /></td>
+            </tr>
+            <tr>
+                <td>telephone</td>
+                <td><input type="tel" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" ng-model="form.telephone" size="60" /></td>
+            </tr>
+            <tr>
+                <td>nationalite</td>
+                <td><input type="text" ng-model="form.nationalite" size="60" /></td>
+            </tr>
+            <tr>
+                <td>photo_profile</td>
+                <td><input type="text" ng-model="form.photo_profile" size="60" /></td>
+            </tr>
+            <tr>
+                <td>code_postal</td>
+                <td><input type="text" ng-model="form.code_postal" size="60" /></td>
+            </tr>
+            <tr>
+                <td>ville</td>
+                <td><input type="text" ng-model="form.ville" size="60" /></td>
+            </tr>
+            <tr>
+                <td>login</td>
+                <td><input type="text" ng-model="form.login" size="60" /></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="text" ng-model="form.password" size="60" /></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input type="text" ng-model="form.email" size="60" /></td>
+            </tr>
+            <tr>
+                <td>biographie</td>
+                <td><input type="text" ng-model="form.biographie" size="60" /></td>
+            </tr>
+            <tr>
+                <td>Classe</td>
+                <!--ng-options="classe.id as classe.libelle for classe in classes"-->
+                    <td><select  ng-model="form.classe_id">
+                        <option value="" selected="selected" disabled selected >-- choisir une formation --</option>
+                        <option ng-repeat="classe in classes" ng-value="classe.id">{{classe.libelle}}</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>civilite</td>
+                    <td><select ng-model="form.civilite">
+                            <option value="" disabled selected>-- choisir la civilité --</option>
+                        <option value="mr">Monsieur
+                        <option value="madame">Madame
+                    </select></td>
+            </tr>
+           
+            <tr>
+                <td colspan="2"><input type="submit" value="submit" /> <button type="reset" value="Reset">Reset</button></td>
+    
+            </tr>
+            
+        </table>
+    </form>
+
+</div>

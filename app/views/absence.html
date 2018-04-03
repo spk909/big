@@ -1,0 +1,63 @@
+<div ng-include="'views/nav.html'"></div>
+
+<h3>choisir un eleve</h3>
+<form ng-submit="search()" novalidate >
+    <table><input value="nom" type="text" ng-model="user.nom" size="20" required >
+    
+     <td colspan="2"><input type="submit" value="submit" /></table>
+
+
+<form ng-submit="insertAbsence()" novalidate >
+    <table>
+        <tr>
+             <td>du</td>
+             <td><input type="date" ng-model="form.date_debut_absence" size="60" /></td>
+        </tr>
+        <tr>
+             <td>au</td>
+             <td><input type="date" ng-model="form.date_fin_absence" size="60" /></td>
+        </tr>
+        <tr>
+                <td>motif</td>
+                <td><input type="text" ng-model="form.prenom" size="60" /></td>
+            </tr>
+    </table>
+</form>
+<table>
+  <tr>
+    <th>formation</th>
+    <th>nom</th>
+    <th>prenom</th>
+  </tr>
+  <tr>
+    <th>cdi</th>
+    <th>raza</th>
+    <th>kris</th>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<form ng-submit="submitUser()" novalidate >
+    <table>
+            <tr>
+                <td>nom</td>
+                <td><input type="text" ng-model="form.nom" size="20" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="submit" /> <button type="reset" value="Reset">Reset</button></td>
+    
+            </tr>
+            
+    </table>
+</form>-->
