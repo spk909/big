@@ -1,0 +1,54 @@
+<div ng-include="'views/nav.html'"></div>
+<!--<ul>
+    <li ng-repeat="classe in classes">
+        {{classe.name}}
+
+    
+         <ul>
+           <li ng-repeat="etudiant in classe.etudiants">
+                 {{classe.name}}:  
+            {{etudiant.firstName}} 
+            {{etudiant.lastName}}
+            <ul>
+              <li ng-repeat="parent in etudiant.parents">
+                 {{parent.name}}
+                 
+                </li>
+             </ul>
+         </li>
+      </ul>
+        
+    </li>
+</ul> -->
+
+
+<h3>Planning CDI </h3>
+<div class="table-responsive">
+<table class="table table-striped">
+     <tr>
+        <th>libelle</th>
+        <th>commentaire</th>
+        <th>dateDebutCours</th>
+        <th>dateFinCours</th>
+        <th>tranche_horaire</th>
+        <th>Matiere</th>
+        <th>Salle</th>
+        <th>Professeur</th>
+    </tr>
+    
+    <tr ng-repeat="cour in cours">
+    <td>{{ cour.libelle }}</td>
+    <td>{{ cour.commentaire }}</td>
+    <td>{{ cour.dateDebutCours }}</td>
+    <td>{{ cour.dateFinCours }}</td>
+    <td>{{ cour.tranche_horaire }}</td>
+    <td>{{ cour.matiere.nom }}</td>
+    <td>{{ cour.salle.numero }}</td>
+    <td>{{ cour.utilisateur.nom }}, {{ cour.utilisateur.prenom }} </td>
+    
+  </tr>
+    
+    
+</table>
+    </div>
+

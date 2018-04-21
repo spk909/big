@@ -1,9 +1,10 @@
 'use strict';
-angular.module('beta2App').service('classeService', function($http) {
+angular.module('beta2App').service('classeService', function($http,$location) {
   var service = {
       
     getAllClasse: function() {
       return $http.get('http://localhost:8080/classe', { cache: true }).then(function(resp) {
+        
         return resp.data;
       });
     },

@@ -1,14 +1,23 @@
 <div ng-include="'views/nav.html'"></div>
 
 <h3>choisir un eleve</h3>
-<form ng-submit="search()" novalidate >
-    <table><input value="nom" type="text" ng-model="user.nom" size="20" required >
-    
-     <td colspan="2"><input type="submit" value="submit" /></table>
 
-
+  
 <form ng-submit="insertAbsence()" novalidate >
     <table>
+    
+        <ul>
+      <div ng-controller="AbsenceCtrl" >
+   <input value="nom" type="text" ng-model="g.nom" size="20" required >
+    
+   <button  ng-click="search()" type="submit" value="recherche" />
+</div>
+            <li  ng-repeat="user in users" ng-value="user.id"  ng-model="form.utilisateur_id">{{ user.nom }},  {{ user.prenom }}  
+                <label><input type="radio"  > selectionner</label>
+            </li>
+         </ul>  
+  
+  
         <tr>
              <td>du</td>
              <td><input type="date" ng-model="form.date_debut_absence" size="60" /></td>
@@ -19,24 +28,29 @@
         </tr>
         <tr>
                 <td>motif</td>
-                <td><input type="text" ng-model="form.prenom" size="60" /></td>
+                <td><input type="text" ng-model="form.motif" size="60" /></td>
             </tr>
     </table>
+     <td colspan="2"><input type="submit" value="enregistrer" /></table>
+
 </form>
-<table>
+    
+    
+   
+<table  class="table">
   <tr>
-    <th>formation</th>
+    
     <th>nom</th>
     <th>prenom</th>
   </tr>
-  <tr>
-    <th>cdi</th>
-    <th>raza</th>
-    <th>kris</th>
+  <tr ng-repeat="user in users" ng-value="user.id">
+  <a>
+    <th>{{ user.nom }}</th>
+    <th>{{ user.prenom }}</th>
+  </a>
   </tr>
 </table>
-
-
+</div>
 
 
 

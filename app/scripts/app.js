@@ -8,22 +8,40 @@
  *
  * Main module of the application.
  */
-var myApp = angular.module('beta2App', ['ui.router', 'ngMaterial']);
+var myApp = angular.module('beta2App', ['ui.router', 'ngMaterial','ngStorage']);
 
-myApp.config(function($stateProvider) {
+myApp.config(function($stateProvider, $urlRouterProvider) {
     
+    $urlRouterProvider.otherwise('/connexion');
     var states=[
     {
         name: 'connexion',
-        url: '',
+        url: '/connexion',
         controller :'ConnexionCtrl',
         templateUrl: 'views/connexion.html'
+       // authenticate: false
+    },
+    {
+        name: 'accueil',
+        url: '/accueil',
+        //controller :'ConnexionCtrl',
+        templateUrl: 'views/accueil.html'
+       // authenticate: false
     },
     {
         name: 'adminMain',
         url: '/adminMain',
         controller :'AdminMainCtrl',
-        templateUrl: 'views/adminMain.html'
+        templateUrl: 'views/adminMain.html',
+        authenticate: true
+    },
+    
+    {
+        name: 'professeur',
+        url: '/professeur',
+        controller :'ProfesseurCtrl',
+        //service:'classeservice',
+        templateUrl: 'views/professeur.html'
     },
     
    {
@@ -86,10 +104,38 @@ myApp.config(function($stateProvider) {
                     return classeService.insertAbsence($stateParams.eleveId); 
                 }
         }
-    }    
+    }
+    
+    
     ];
     
     states.forEach(function(state) {
     $stateProvider.state(state);
   });
+  
+  
 });
+
+myApp.factory("HttpErrorInterceptorModule", ["$q", "$rootScope", "$location",
+    function($q, $rootScope, $location) {
+        var success = function(response) {
+            // pass through
+            return response;
+        },
+            error = function(response) {
+                if(response.status === 401) {
+                    $location.path("/connexion");
+                }
+
+                return $q.reject(response);
+            };
+
+        return function(httpPromise) {
+            return httpPromise.then(success, error);
+        };
+    }
+]).config(["$httpProvider",
+    function($httpProvider) {
+        $httpProvider.responseInterceptors.push("HttpErrorInterceptorModule");
+    }
+]);

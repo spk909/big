@@ -47,26 +47,9 @@ angular.module('beta2App')
     $scope.submitUser = function () {
         var method = "";
         var url = "";
-        // ($scope.form.id === -1) {
-        //Id is absent so add employee - POST operation
         method = "POST";
         url = 'http://localhost:8080/user';
-        /*
-         //If Id is present, it's edit operation - PUT operation
-         method = "PUT";
-         url = 'http://localhost:8080/user/' + $scope.form.id;
-         
-         */
-        /*  $http({
-         method: method,
-         url: url,
-         data: angular.toJson($scope.form),
-         headers: {
-         'Content-Type': 'application/json',
-         'Access-Control-Allow-Methods': 'GET, PUT, POST, OPTIONS',
-         'Access-Control-Allow-Origin': '*'
-         }
-         }).then(_success, _error);*/
+  
         $http({
             method: method,
             url: url,
